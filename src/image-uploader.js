@@ -68,6 +68,17 @@
             });
 
         };
+        
+        plugin.addImage = function(src, id){
+            plugin.settings.preloaded.push(src, id);
+            // Change style
+            $container.addClass('has-files');
+
+            // Get the upload images container
+            let $uploadedContainer = $container.find('.uploaded');
+            
+            $uploadedContainer.append(createImg(src, id, true));
+        }
 
         let createContainer = function () {
 
